@@ -1,0 +1,21 @@
+<h3 style="color: blue; text-align: center; margin-bottom: 50px;">Bài tập đặt vé xe bus</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Xe</h3>
+      <ng-container *ngFor="let item of mangGhe; let index = index ">
+        <app-item-ghe  [ghe]="item" (eventChonGhe)="capNhatGhe($event)"> 
+        </app-item-ghe>
+        <br *ngIf="(index + 1) % 4 === 0 ">
+      </ng-container>
+    </div>
+    <div class="col-sm-6">
+        <h3>Danh Sách Ghế Đặt</h3>
+        <div *ngFor="let item of mangGheDangDat; let i = index">
+            <span>Ghế: {{ item.TenGhe }} ${{ item.Gia }} </span>
+            <button class="btn" style="color: red;" (click)="huyGhe(item.SoGhe,i)">[Hủy]</button>     
+    </div>
+    </div>
+  </div>
+</div>
