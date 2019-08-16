@@ -13,8 +13,10 @@ export class ItemGheComponent implements OnInit {
 
   constructor() { }
   chonGhe(){
+    if(!this.ghe.TrangThai){
       this.statusColor = !this.statusColor;
       this.eventChonGhe.emit({ghe: this.ghe, statusColor: this.statusColor});
+    }
   }
   ngOnInit() {  
   }
